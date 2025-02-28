@@ -1,9 +1,4 @@
 document.addEventListener("DOMContentLoaded", () => {
-  document.body.classList.remove("custom-cursor");
-  const cursor = document.querySelector(".cursor");
-  if (cursor && cursor.parentNode) {
-    cursor.parentNode.removeChild(cursor);
-  }
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();

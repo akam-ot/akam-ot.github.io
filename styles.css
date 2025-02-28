@@ -28,16 +28,6 @@ body {
   margin: 0 auto;
   padding: 0 20px;
 }
-body.custom-cursor {
-  cursor: auto;
-}
-body.custom-cursor a,
-body.custom-cursor button,
-body.custom-cursor input,
-body.custom-cursor .project-image,
-body.custom-cursor .logo {
-  cursor: auto;
-}
 a,
 button,
 input[type="submit"] {
@@ -46,30 +36,6 @@ input[type="submit"] {
 input,
 textarea {
   cursor: text;
-}
-.cursor {
-  display: none;
-}
-.cursor::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  border: 1px solid rgba(0, 0, 0, 0.3);
-  transform: translate(-50%, -50%);
-  transition: width 0.3s, height 0.3s;
-}
-.cursor.expand {
-  width: 30px;
-  height: 30px;
-  background-color: rgba(0, 0, 0, 0.3);
-}
-.cursor.expand::after {
-  width: 50px;
-  height: 50px;
 }
 h1,
 h2,
@@ -504,9 +470,6 @@ footer {
 }
 .download-btn:hover svg {
   transform: translateY(2px);
-}
-.image-placeholder {
-  display: none;
 }
 .experience-timeline {
   position: relative;

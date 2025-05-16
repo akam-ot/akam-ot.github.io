@@ -61,8 +61,8 @@
           </div>
           <div class="about-content">
             <p class="large-text">
-              Software engineering student with interests in web development,
-              UI/UX design, and machine learning.
+              Software engineering student with interests in machine learning, web development, and
+              UI/UX design.
             </p>
             <div class="about-details">
               <p>
@@ -92,6 +92,37 @@
             <h2>Selected Work</h2>
           </div>
           <div class="projects">
+            <div class="project">
+              <div class="project-image">
+                <img
+                  src="images/NER_XLMR.png"
+                  alt="Kurmanji NER with XLM-RoBERTa"
+                  class="project-img"
+                />
+              </div>
+              <div class="project-info">
+                <h3>Kurdish Named Entity Recognition with XLM-RoBERTa</h3>
+                <p class="project-tags">
+                  Python, Transformers, PyTorch, XLM-RoBERTa
+                </p>
+                <p class="project-description">
+                  Fine-tuned XLM-RoBERTa for Named Entity Recognition on
+                  Kurmanji Kurdish using ~6,000 annotated sentences. Achieved F1
+                  score of ~0.80 for PER, LOC, ORG, and MISC entities. Deployed
+                  to Hugging Face Hub to address the low-resource NLP gap for
+                  Kurdish.
+                </p>
+                <div class="project-links">
+                  <a
+                    href="https://huggingface.co/akam-ot/ku-ner-xlmr"
+                    target="_blank"
+                    class="visit-button"
+                  >
+                    <span>Model on Hugging Face</span>
+                  </a>
+                </div>
+              </div>
+            </div>
             <div class="project">
               <div class="project-image">
                 <img
@@ -571,6 +602,12 @@
                   target="_blank"
                   class="social-link"
                   >GitHub</a
+                >
+                <a
+                  href="https://huggingface.co/akam-ot"
+                  target="_blank"
+                  class="social-link"
+                  >Hugging Face</a
                 >
               </div>
             </div>

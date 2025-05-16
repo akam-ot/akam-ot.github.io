@@ -31,7 +31,7 @@ This is my personal portfolio website showcasing my projects, skills, and experi
 
 ## Viewing the Portfolio
 
-You can view the live portfolio at: [https://akam-ot.github.io/akam-nawzad/](https://akam-ot.github.io/akam-nawzad/)
+You can view the live portfolio at: [https://akam-ot.github.io](https://akam-ot.github.io)
 
 ## Contact
 

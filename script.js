@@ -14,22 +14,34 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const revealElements = document.querySelectorAll("section, .project");
-  
   const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
     const revealPoint = 150;
+
     revealElements.forEach((element) => {
       const elementTop = element.getBoundingClientRect().top;
-      // Changed condition to be more inclusive for elements already visible
       if (elementTop < windowHeight - revealPoint) {
         element.classList.add("revealed");
+
+        // Special handling for about section to ensure smooth animations
+        if (element.id === "about") {
+          const aboutElements = element.querySelectorAll(
+            ".section-header, .about-content, .large-text, .about-details"
+          );
+          aboutElements.forEach((el, index) => {
+            setTimeout(() => {
+              el.style.opacity = "1";
+              el.style.transform = "translateY(0)";
+            }, index * 200); // Stagger the animations
+          });
+        }
       }
     });
   };
 
   const style = document.createElement("style");
   style.textContent = `
-        section:not(#hero), .project {
+        section, .project {
             opacity: 0;
             transform: translateY(30px);
             transition: opacity 0.8s ease, transform 0.8s ease;
@@ -38,21 +50,20 @@ document.addEventListener("DOMContentLoaded", () => {
             opacity: 1;
             transform: translateY(0);
         }
-        /* Ensure hero section is always visible */
-        #hero {
-            opacity: 1;
-            transform: translateY(0);
+        
+        #about .section-header,
+        #about .about-content,
+        #about .large-text,
+        #about .about-details {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
     `;
   document.head.appendChild(style);
 
-  // Force initial check after a small delay to ensure all elements are rendered
-  setTimeout(() => {
-    revealOnScroll();
-  }, 100);
-  
+  revealOnScroll();
   window.addEventListener("scroll", revealOnScroll);
-
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
   const highlightNav = () => {
@@ -74,7 +85,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
-
   const navStyle = document.createElement("style");
   navStyle.textContent = `
         .nav-link.active {
@@ -85,7 +95,6 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     `;
   document.head.appendChild(navStyle);
-
   highlightNav();
   window.addEventListener("scroll", highlightNav);
 });

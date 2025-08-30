@@ -170,6 +170,32 @@ h1 {
   color: var(--color-grey);
   line-height: 1.6;
 }
+.hero-highlights {
+  display: flex;
+  gap: 60px;
+  margin-bottom: 60px;
+  flex-wrap: wrap;
+}
+.highlight-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.highlight-number {
+  font-size: 2.5rem;
+  font-weight: 600;
+  color: var(--color-black);
+  margin-bottom: 8px;
+  letter-spacing: -0.5px;
+}
+.highlight-text {
+  font-size: 0.9rem;
+  color: var(--color-grey);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 500;
+}
 .scroll-indicator {
   display: flex;
   flex-direction: column;
@@ -224,6 +250,9 @@ h1 {
   #hero::before {
     width: 30%;
   }
+  .hero-highlights {
+    gap: 40px;
+  }
 }
 @media (max-width: 768px) {
   h1 {
@@ -232,6 +261,17 @@ h1 {
   .hero-text {
     font-size: 1.25rem;
   }
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+  }
+  .hero-highlights {
+    gap: 30px;
+    margin-bottom: 40px;
+  }
+  .highlight-number {
+    font-size: 2rem;
+  }
   #hero::before {
     display: none;
   }
@@ -239,6 +279,13 @@ h1 {
 @media (max-width: 576px) {
   h1 {
     font-size: 2.5rem;
+  }
+  .hero-highlights {
+    gap: 20px;
+    justify-content: center;
+  }
+  .highlight-item {
+    min-width: 80px;
   }
 }
 .about-content {
@@ -624,4 +671,67 @@ footer {
   .education-date {
     margin-bottom: 5px;
   }
+}
+
+.project {
+  margin-bottom: 4rem;
+}
+
+.project:last-child {
+  margin-bottom: 0;
+}
+
+#about {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+#about.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#about .section-header {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.2s, transform 0.6s ease 0.2s;
+}
+
+#about.revealed .section-header {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#about .about-content {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.4s, transform 0.6s ease 0.4s;
+}
+
+#about.revealed .about-content {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#about .large-text {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.6s, transform 0.6s ease 0.6s;
+}
+
+#about.revealed .large-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#about .about-details {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease 0.8s, transform 0.6s ease 0.8s;
+}
+
+#about.revealed .about-details {
+  opacity: 1;
+  transform: translateY(0);
 }

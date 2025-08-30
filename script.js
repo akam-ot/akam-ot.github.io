@@ -14,40 +14,49 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const revealElements = document.querySelectorAll("section, .project");
-
-  const style = document.createElement("style");
-  style.textContent = `
-    section, .project {
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    section.revealed, .project.revealed {
-      opacity: 1;
-      transform: translateY(0);
-    }
-  `;
-  document.head.appendChild(style);
-
+  
   const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
     const revealPoint = 150;
     revealElements.forEach((element) => {
       const elementTop = element.getBoundingClientRect().top;
+      // Changed condition to be more inclusive for elements already visible
       if (elementTop < windowHeight - revealPoint) {
         element.classList.add("revealed");
       }
     });
   };
 
-  revealOnScroll();
+  const style = document.createElement("style");
+  style.textContent = `
+        section:not(#hero), .project {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.8s ease, transform 0.8s ease;
+        }
+        section.revealed, .project.revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        /* Ensure hero section is always visible */
+        #hero {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    `;
+  document.head.appendChild(style);
+
+  // Force initial check after a small delay to ensure all elements are rendered
+  setTimeout(() => {
+    revealOnScroll();
+  }, 100);
+  
   window.addEventListener("scroll", revealOnScroll);
 
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
-
   const highlightNav = () => {
-    const scrollPosition = window.scrollY;
+    let scrollPosition = window.scrollY;
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - 150;
       const sectionHeight = section.offsetHeight;
@@ -68,13 +77,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const navStyle = document.createElement("style");
   navStyle.textContent = `
-    .nav-link.active {
-      font-weight: 500;
-    }
-    .nav-link.active::after {
-      width: 100%;
-    }
-  `;
+        .nav-link.active {
+            font-weight: 500;
+        }
+        .nav-link.active::after {
+            width: 100%;
+        }
+    `;
   document.head.appendChild(navStyle);
 
   highlightNav();

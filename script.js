@@ -14,16 +14,6 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   const revealElements = document.querySelectorAll("section, .project");
-  const revealOnScroll = () => {
-    const windowHeight = window.innerHeight;
-    const revealPoint = 150;
-    revealElements.forEach((element) => {
-      const elementTop = element.getBoundingClientRect().top;
-      if (elementTop < windowHeight - revealPoint || window.scrollY === 0) {
-        element.classList.add("revealed");
-      }
-    });
-  };
 
   const style = document.createElement("style");
   style.textContent = `
@@ -39,13 +29,25 @@ document.addEventListener("DOMContentLoaded", () => {
   `;
   document.head.appendChild(style);
 
+  const revealOnScroll = () => {
+    const windowHeight = window.innerHeight;
+    const revealPoint = 150;
+    revealElements.forEach((element) => {
+      const elementTop = element.getBoundingClientRect().top;
+      if (elementTop < windowHeight - revealPoint) {
+        element.classList.add("revealed");
+      }
+    });
+  };
+
   revealOnScroll();
   window.addEventListener("scroll", revealOnScroll);
 
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
+
   const highlightNav = () => {
-    let scrollPosition = window.scrollY;
+    const scrollPosition = window.scrollY;
     sections.forEach((section) => {
       const sectionTop = section.offsetTop - 150;
       const sectionHeight = section.offsetHeight;

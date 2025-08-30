@@ -12,32 +12,36 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+
   const revealElements = document.querySelectorAll("section, .project");
   const revealOnScroll = () => {
     const windowHeight = window.innerHeight;
     const revealPoint = 150;
     revealElements.forEach((element) => {
       const elementTop = element.getBoundingClientRect().top;
-      if (elementTop < windowHeight - revealPoint) {
+      if (elementTop < windowHeight - revealPoint || window.scrollY === 0) {
         element.classList.add("revealed");
       }
     });
   };
+
   const style = document.createElement("style");
   style.textContent = `
-        section, .project {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: opacity 0.8s ease, transform 0.8s ease;
-        }
-        section.revealed, .project.revealed {
-            opacity: 1;
-            transform: translateY(0);
-        }
-    `;
+    section, .project {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.revealed, .project.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  `;
   document.head.appendChild(style);
+
   revealOnScroll();
   window.addEventListener("scroll", revealOnScroll);
+
   const sections = document.querySelectorAll("section");
   const navLinks = document.querySelectorAll(".nav-link");
   const highlightNav = () => {
@@ -59,16 +63,18 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
+
   const navStyle = document.createElement("style");
   navStyle.textContent = `
-        .nav-link.active {
-            font-weight: 500;
-        }
-        .nav-link.active::after {
-            width: 100%;
-        }
-    `;
+    .nav-link.active {
+      font-weight: 500;
+    }
+    .nav-link.active::after {
+      width: 100%;
+    }
+  `;
   document.head.appendChild(navStyle);
+
   highlightNav();
   window.addEventListener("scroll", highlightNav);
 });

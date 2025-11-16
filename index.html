@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -9,7 +8,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;1,400&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@500;600&family=Cascadia+Mono:wght@400;500;600&family=Lateef:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <script src="script.js" defer></script>
@@ -19,459 +18,681 @@
       property="og:description"
       content="AI Developer and Software Developer with interests in machine learning, NLP"
     />
-    <style>
-
-      .project {
-        margin-bottom: 4rem; 
-      }
-
-      .project:last-child {
-        margin-bottom: 0; 
-      }
-    </style>
-    ```
   </head>
   <body>
-    <header>
-      <div class="container">
-        <nav>
-          <div class="logo">AN.</div>
-          <ul class="nav-links">
-            <li><a href="#about" class="nav-link">About</a></li>
-            <li><a href="#work" class="nav-link">Work</a></li>
-            <li><a href="#skills" class="nav-link">Skills</a></li>
-            <li><a href="#experience" class="nav-link">Experience</a></li>
-            <li><a href="#education" class="nav-link">Education</a></li>
-            <li><a href="#contact" class="nav-link">Contact</a></li>
+    <!-- Header with Navigation and Language Switcher -->
+    <header class="site-header" role="banner">
+      <div class="header-container">
+        <!-- Navigation Section (75% on mobile) -->
+        <nav class="main-nav" role="navigation" aria-label="Main navigation">
+          <!-- Navigation Links -->
+          <ul class="nav-menu" id="nav-menu" role="list">
+            <li class="nav-item">
+              <a href="#about" class="nav-link" data-i18n="nav_about">About</a>
+            </li>
+            <li class="nav-item">
+              <a href="#work" class="nav-link" data-i18n="nav_work">Work</a>
+            </li>
+            <li class="nav-item">
+              <a href="#skills" class="nav-link" data-i18n="nav_skills"
+                >Skills</a
+              >
+            </li>
+            <li class="nav-item">
+              <a href="#contact" class="nav-link" data-i18n="nav_contact"
+                >Contact</a
+              >
+            </li>
           </ul>
         </nav>
+
+        <!-- Language Switcher Section (25% on mobile) -->
+        <div class="lang-switcher" data-lang-switcher>
+          <button
+            class="lang-button"
+            type="button"
+            aria-haspopup="listbox"
+            aria-expanded="false"
+            aria-label="Change language"
+            aria-controls="lang-menu"
+          >
+            <span class="lang-label">EN</span>
+            <svg
+              class="lang-icon"
+              width="12"
+              height="12"
+              viewBox="0 0 12 12"
+              fill="none"
+              aria-hidden="true"
+            >
+              <path
+                d="M3 4.5l3 3 3-3"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <ul class="lang-menu" id="lang-menu" role="listbox">
+            <li role="presentation">
+              <button
+                class="lang-option"
+                type="button"
+                role="option"
+                data-lang="en"
+                aria-selected="true"
+              >
+                English
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                class="lang-option"
+                type="button"
+                role="option"
+                data-lang="ku"
+                aria-selected="false"
+              >
+                Kurdî
+              </button>
+            </li>
+            <li role="presentation">
+              <button
+                class="lang-option"
+                type="button"
+                role="option"
+                data-lang="ckb"
+                aria-selected="false"
+              >
+                کوردی
+              </button>
+            </li>
+          </ul>
+        </div>
       </div>
     </header>
+
     <main>
+      <!-- Hero Section -->
       <section id="hero">
         <div class="container">
-          <h1>Akam Nawzad</h1>
-          <p class="hero-text">AI Developer @ Ovanya</p>
-          <p class="hero-description">
-            Specializing in machine learning, and natural language processing.
-          </p>
-          <div class="scroll-indicator">
-            <span>Scroll</span>
-            <div class="scroll-line"></div>
+          <div class="hero-content">
+            <div class="hero-label" data-i18n="hero_title">
+              AI Developer @ Ovanya
+            </div>
+            <h1 class="hero-title" data-i18n="hero_name">Akam Nawzad</h1>
+            <p class="hero-subtitle" data-i18n="hero_description">
+              Specializing in machine learning and natural language processing.
+            </p>
+            <a href="#about" class="btn-primary">
+              <span data-i18n="hero_cta">Learn more</span>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M8 4v8M12 8l-4 4-4-4"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
           </div>
         </div>
       </section>
+
+      <!-- About Section -->
       <section id="about">
         <div class="container">
           <div class="section-header">
-            <span class="section-number">01</span>
-            <h2>About</h2>
+            <span class="section-number" data-i18n="about_section_number"
+              >01</span
+            >
+            <h2 class="section-title" data-i18n="about_section_title">About</h2>
           </div>
-          <div class="about-content">
-            <p class="large-text">
-              AI developer and software developer passionate about machine
-              learning and natural language processing.
-            </p>
-            <div class="about-details">
-              <p>
-                Graduated from the University of Kurdistan Hewlêr (UKH) with a
-                focus on software development and AI. Currently working on
-                real-world projects in NLP, web development, and machine
-                learning.
+
+          <!-- About Me Section -->
+          <div class="about-intro">
+            <h3 class="about-section-title" data-i18n="about_intro_title">
+              About me
+            </h3>
+            <div class="about-intro-content">
+              <p class="about-lead" data-i18n="about_large_text">
+                Machine learning engineer focused on NLP and applied AI.
               </p>
-              <p>
-                My technical skills span from frontend development with Vue.js
-                to backend work with Python/Flask and AI model fine-tuning. I
-                enjoy creating projects that solve practical problems and
-                improve accessibility across different languages and contexts.
-                I'm particularly passionate about applying AI and machine
-                learning to address challenges in Kurdish language processing
-                and localization.
-              </p>
+              <div class="about-description">
+                <p data-i18n="about_details_p1">
+                  I work across the full ML lifecycle, from data collection to
+                  deployment. Currently focused on Kurdish language processing.
+                </p>
+              </div>
             </div>
+          </div>
+
+          <!-- Experience Section -->
+          <div class="about-section">
+            <h3
+              class="about-section-title"
+              data-i18n="experience_section_title"
+            >
+              Experience
+            </h3>
+            <div class="about-timeline">
+              <div class="about-timeline-item">
+                <div class="about-timeline-left">
+                  <span class="about-year" data-i18n="experience_1_date">
+                    2025 - present
+                  </span>
+                </div>
+                <div class="about-timeline-right">
+                  <h4 class="about-item-title" data-i18n="experience_1_title">
+                    AI Developer
+                  </h4>
+                  <p class="about-company" data-i18n="experience_1_company">
+                    Ovanya
+                  </p>
+                  <p class="about-text" data-i18n="experience_1_description">
+                    Building AI solutions with focus on machine learning and
+                    computer vision.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about-timeline-item">
+                <div class="about-timeline-left">
+                  <span class="about-year" data-i18n="experience_2_date">
+                    Sept 2024 - Oct 2024
+                  </span>
+                </div>
+                <div class="about-timeline-right">
+                  <h4 class="about-item-title" data-i18n="experience_2_title">
+                    AI Research Intern
+                  </h4>
+                  <p class="about-company" data-i18n="experience_2_company">
+                    UKH AI Center
+                  </p>
+                  <p class="about-text" data-i18n="experience_2_description">
+                    Developed NLP models for Kurdish language processing.
+                    Collected and processed 140K+ news articles for training
+                    data.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about-timeline-item">
+                <div class="about-timeline-left">
+                  <span class="about-year" data-i18n="experience_3_date">
+                    July 2024 - Aug 2024
+                  </span>
+                </div>
+                <div class="about-timeline-right">
+                  <h4 class="about-item-title" data-i18n="experience_3_title">
+                    Frontend Developer Intern
+                  </h4>
+                  <p class="about-company" data-i18n="experience_3_company">
+                    Standing Tech
+                  </p>
+                  <p class="about-text" data-i18n="experience_3_description">
+                    Built and maintained websites for local businesses.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Education Section -->
+          <div class="about-section">
+            <h3 class="about-section-title" data-i18n="education_section_title">
+              Education
+            </h3>
+            <div class="about-timeline">
+              <div class="about-timeline-item">
+                <div class="about-timeline-left">
+                  <span class="about-year" data-i18n="education_1_date">
+                    2021 - 2025
+                  </span>
+                </div>
+                <div class="about-timeline-right">
+                  <h4 class="about-item-title" data-i18n="education_1_title">
+                    BSc in Software Engineering
+                  </h4>
+                  <p class="about-company" data-i18n="education_1_institution">
+                    University of Kurdistan Hewlêr (UKH)
+                  </p>
+                  <p class="about-text" data-i18n="education_1_description">
+                    Focus on software development, algorithms, and AI.
+                  </p>
+                </div>
+              </div>
+
+              <div class="about-timeline-item">
+                <div class="about-timeline-left">
+                  <span class="about-year" data-i18n="education_2_date">
+                    2024
+                  </span>
+                </div>
+                <div class="about-timeline-right">
+                  <h4 class="about-item-title" data-i18n="education_2_title">
+                    Ovanya AI Bootcamp
+                  </h4>
+                  <p class="about-company" data-i18n="education_2_institution">
+                    Ovanya • wedo
+                  </p>
+                  <p class="about-text" data-i18n="education_2_description">
+                    Intensive program on ML fundamentals and neural networks.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Download CV -->
+          <div class="about-actions">
+            <a href="assets/Akam_s_Resume.pdf" download class="btn-secondary">
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                <path
+                  d="M8 2v8M8 10l-3-3M8 10l3-3M3 13h10"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+              <span data-i18n="contact_resume_button">Download CV</span>
+            </a>
           </div>
         </div>
       </section>
+
+      <!-- Work Section -->
       <section id="work">
         <div class="container">
           <div class="section-header">
-            <span class="section-number">02</span>
-            <h2>Selected Work</h2>
+            <span class="section-number" data-i18n="work_section_number"
+              >02</span
+            >
+            <h2 class="section-title" data-i18n="work_section_title">
+              Selected Work
+            </h2>
           </div>
-          <div class="project">
-  <div class="project-image">
-    <img
-      src="images/NER_XLMR.png"
-      alt="Kurdish NER with XLM-R screenshot"
-      class="project-img"
-    />
-  </div>
-  <div class="project-info">
-    <h3>Kurdish NER with XLM-R</h3>
-    <p class="project-tags">
-      Machine Learning, NLP, Hugging Face
-    </p>
-    <p class="project-description">
-      Fine-tuned <em>xlm-roberta-base</em> for Named Entity Recognition in
-      Kurmanji Kurdish. Trained on 7,919 annotated sentences to detect
-      <strong>PER</strong>, <strong>LOC</strong>, and <strong>ORG</strong> entities.
-      Achieved an F1 score of <strong>0.87</strong> on the held-out test set.
-    </p>
-    <div class="project-links">
-      <a
-        href="https://huggingface.co/akam-ot/ku-ner-xlmr"
-        target="_blank"
-        class="visit-button"
-      >
-        <span>View Model</span>
-      </a>
-    </div>
-  </div>
-</div>
+          <div class="projects-grid">
+            <!-- Project 1 -->
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/NER_XLMR.png"
+                  alt="Kurdish NER with XLM-R"
+                  class="project-img"
+                />
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title" data-i18n="ner_xlmr_title">
+                    Kurdish NER with XLM-R
+                  </h3>
+                  <span class="project-number">01</span>
+                </div>
+                <p class="project-tags" data-i18n="ner_xlmr_tags">
+                  Machine Learning, NLP, Hugging Face
+                </p>
+                <p class="project-description" data-i18n="ner_xlmr_description">
+                  Fine-tuned xlm-roberta-base for Named Entity Recognition in
+                  Kurmanji Kurdish. Achieved an F1 score of 0.87 on the test
+                  set.
+                </p>
+                <a
+                  href="https://huggingface.co/akam-ot/ku-ner-xlmr"
+                  target="_blank"
+                  class="project-link"
+                >
+                  <span data-i18n="ner_xlmr_link">View Model</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M6 4l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+            </article>
 
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="images/KurdishDialectClassifier.png"
-                alt="Kurdish Dialect Classifier screenshot"
-                class="project-img"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Kurdish Dialect Classifier</h3>
-              <p class="project-tags">
-                Machine Learning, NLP, Gradio, Hugging Face
-              </p>
-              <p class="project-description">
-                A lightweight web application that identifies whether a given
-                Kurdish text (in Arabic script) is written in Sorani or Kurmanji
-                (Badini). Built with Gradio for the UI and trained a Logistic
-                Regression classifier using TF-IDF vectorization. Achieved 92%
-                classification accuracy on test data.
-              </p>
-              <div class="project-links">
+            <!-- Project 2 -->
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/KurdishDialectClassifier.png"
+                  alt="Kurdish Dialect Classifier"
+                  class="project-img"
+                />
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3
+                    class="project-title"
+                    data-i18n="dialect_classifier_title"
+                  >
+                    Kurdish Dialect Classifier
+                  </h3>
+                  <span class="project-number">02</span>
+                </div>
+                <p class="project-tags" data-i18n="dialect_classifier_tags">
+                  Machine Learning, NLP, Gradio, Hugging Face
+                </p>
+                <p
+                  class="project-description"
+                  data-i18n="dialect_classifier_description"
+                >
+                  A web application that identifies whether Kurdish text is
+                  written in Sorani or Kurmanji. Achieved 92% classification
+                  accuracy.
+                </p>
                 <a
                   href="https://huggingface.co/spaces/akam-ot/kurdish-dialect-classifier"
                   target="_blank"
-                  class="visit-button"
+                  class="project-link"
                 >
-                  <span>Live Demo</span>
+                  <span data-i18n="dialect_classifier_link">Live Demo</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M6 4l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </a>
               </div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="images/Gorrer.png"
-                alt="Gorrer - Kurdish Transliterator screenshot"
-                class="project-img"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Gorrer - Kurdish Transliterator</h3>
-              <p class="project-tags">Python, Flask, Regex, Serverless</p>
-              <p class="project-description">
-                A web tool that converts Kurdish text between Arabic and Latin
-                scripts. Built with Flask and deployed as a serverless API on
-                Vercel, it handles linguistic nuances like bizroke insertion for
-                accurate transliteration.
-              </p>
-              <div class="project-links">
+            </article>
+
+            <!-- Project 3 -->
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/Gorrer.png"
+                  alt="Gorrer - Kurdish Transliterator"
+                  class="project-img"
+                />
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title" data-i18n="gorrer_title">
+                    Gorrer - Kurdish Transliterator
+                  </h3>
+                  <span class="project-number">03</span>
+                </div>
+                <p class="project-tags" data-i18n="gorrer_tags">
+                  Python, Flask, Regex, Serverless
+                </p>
+                <p class="project-description" data-i18n="gorrer_description">
+                  A web tool that converts Kurdish text between Arabic and Latin
+                  scripts with accurate transliteration.
+                </p>
                 <a
                   href="https://gorrer.vercel.app/"
                   target="_blank"
-                  class="visit-button"
+                  class="project-link"
                 >
-                  <span>Visit Website</span>
+                  <span data-i18n="gorrer_link">Visit Website</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M6 4l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </a>
               </div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="images/KurdType.png"
-                alt="KurdType website screenshot"
-                class="project-img"
-              />
-            </div>
-            <div class="project-info">
-              <h3>KurdType</h3>
-              <p class="project-tags">UI/UX Design, Web Development</p>
-              <p class="project-description">
-                A platform for discovering and downloading open-licensed Kurdish
-                fonts. The site makes typography more accessible for Kurdish
-                content creators and designers looking for quality typefaces.
-              </p>
-              <div class="project-links">
+            </article>
+
+            <!-- Project 4 -->
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/KurdType.png"
+                  alt="KurdType"
+                  class="project-img"
+                />
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title" data-i18n="kurdtype_title">
+                    KurdType
+                  </h3>
+                  <span class="project-number">04</span>
+                </div>
+                <p class="project-tags" data-i18n="kurdtype_tags">
+                  UI/UX Design, Web Development
+                </p>
+                <p class="project-description" data-i18n="kurdtype_description">
+                  A platform for discovering and downloading open-licensed
+                  Kurdish fonts for content creators.
+                </p>
                 <a
                   href="https://kurdtype.vercel.app/"
                   target="_blank"
-                  class="visit-button"
+                  class="project-link"
                 >
-                  <span>Visit Website</span>
+                  <span data-i18n="kurdtype_link">Visit Website</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M6 4l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </a>
               </div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="images/LondonTowers.png"
-                alt="London Towers Erbil website screenshot"
-                class="project-img"
-              />
-            </div>
-            <div class="project-info">
-              <h3>London Towers Erbil</h3>
-              <p class="project-tags">Web Design, Frontend Development</p>
-              <p class="project-description">
-                Designed and built the website for London Towers Erbil, focusing
-                on clean design and responsive implementation to showcase the
-                property effectively.
-              </p>
-              <div class="project-links">
+            </article>
+
+            <!-- Project 5 -->
+            <article class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/Corpus.png"
+                  alt="Kurdish News Corpus"
+                  class="project-img"
+                />
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title" data-i18n="corpus_title">
+                    Kurdish News Corpus
+                  </h3>
+                  <span class="project-number">05</span>
+                </div>
+                <p class="project-tags" data-i18n="corpus_tags">
+                  Web Scraping, Python, Data Processing
+                </p>
+                <p class="project-description" data-i18n="corpus_description">
+                  Collected and processed over 140,000 Kurdish news articles for
+                  NLP research at UKH AI Center.
+                </p>
+              </div>
+            </article>
+
+            <!-- Publication Card -->
+            <article class="project-card publication-card">
+              <div class="project-image">
+                <img
+                  src="images/paper.png"
+                  alt="Fine-tuning XLM-RoBERTa for Named Entity Recognition in Kurmanji Kurdish"
+                  class="project-img"
+                />
+              </div>
+              <div class="project-content">
+                <div class="project-header">
+                  <h3 class="project-title" data-i18n="publication_title">
+                    Fine-tuning XLM-RoBERTa for Named Entity Recognition in
+                    Kurmanji Kurdish
+                  </h3>
+                  <span class="project-number">06</span>
+                </div>
+                <p class="project-tags" data-i18n="publication_tags">
+                  Publication, NER, XLM-RoBERTa, Kurmanji
+                </p>
+                <p
+                  class="project-description"
+                  data-i18n="publication_description"
+                >
+                  Peer-reviewed paper presented at the 9th Widening NLP Workshop
+                  (WiNLP 2025), demonstrating an XLM-RoBERTa-based NER system
+                  for Kurmanji Kurdish with strong F1 scores.
+                </p>
                 <a
-                  href="https://londontowerserbil.com"
+                  href="https://aclanthology.org/2025.winlp-main.8/"
                   target="_blank"
-                  class="visit-button"
+                  class="project-link"
                 >
-                  <span>Visit Website</span>
+                  <span data-i18n="publication_link">Read paper</span>
+                  <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <path
+                      d="M6 4l4 4-4 4"
+                      stroke="currentColor"
+                      stroke-width="1.5"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
                 </a>
               </div>
-            </div>
-          </div>
-          <div class="project">
-            <div class="project-image">
-              <img
-                src="images/Corpus.png"
-                alt="Kurdish News Corpus screenshot"
-                class="project-img"
-              />
-            </div>
-            <div class="project-info">
-              <h3>Kurdish News Corpus</h3>
-              <p class="project-tags">Web Scraping, Python, Data Processing</p>
-              <p class="project-description">
-                Collected and processed over 140,000 Kurdish news articles
-                during an internship at UKH AI Center using Beautiful Soup and
-                Scrapy, creating a valuable dataset for Kurdish NLP research.
-              </p>
-            </div>
+            </article>
           </div>
         </div>
       </section>
+
+      <!-- Skills Section -->
       <section id="skills">
         <div class="container">
           <div class="section-header">
-            <span class="section-number">03</span>
-            <h2>Skills</h2>
+            <span class="section-number" data-i18n="skills_section_number"
+              >03</span
+            >
+            <h2 class="section-title" data-i18n="skills_section_title">
+              Skills
+            </h2>
           </div>
           <div class="skills-grid">
             <div class="skill-category">
-              <h3>Frontend</h3>
-              <ul>
-                <li>HTML/CSS</li>
-                <li>JavaScript</li>
-                <li>Vue.js</li>
-                <li>Tailwind CSS</li>
+              <h3 data-i18n="skills_frontend_title">Frontend</h3>
+              <ul class="skill-list">
+                <li data-i18n="skills_frontend_1">HTML/CSS</li>
+                <li data-i18n="skills_frontend_2">JavaScript</li>
+                <li data-i18n="skills_frontend_3">Vue.js</li>
+                <li data-i18n="skills_frontend_4">Tailwind CSS</li>
               </ul>
             </div>
             <div class="skill-category">
-              <h3>Design</h3>
-              <ul>
-                <li>UI/UX Design</li>
-                <li>Figma</li>
-                <li>Adobe Photoshop</li>
-                <li>Canva</li>
+              <h3 data-i18n="skills_design_title">Design</h3>
+              <ul class="skill-list">
+                <li data-i18n="skills_design_1">UI/UX Design</li>
+                <li data-i18n="skills_design_2">Figma</li>
+                <li data-i18n="skills_design_3">Adobe Photoshop</li>
+                <li data-i18n="skills_design_4">Canva</li>
               </ul>
             </div>
             <div class="skill-category">
-              <h3>Backend & Databases</h3>
-              <ul>
-                <li>Python</li>
-                <li>Flask</li>
-                <li>PHP</li>
-                <li>Node.js</li>
-                <li>Express.js</li>
-                <li>REST APIs</li>
-                <li>MySQL</li>
+              <h3 data-i18n="skills_backend_title">Backend & Databases</h3>
+              <ul class="skill-list">
+                <li data-i18n="skills_backend_1">Python</li>
+                <li data-i18n="skills_backend_2">Flask</li>
+                <li data-i18n="skills_backend_3">PHP</li>
+                <li data-i18n="skills_backend_4">Node.js</li>
+                <li data-i18n="skills_backend_5">Express.js</li>
+                <li data-i18n="skills_backend_6">REST APIs</li>
+                <li data-i18n="skills_backend_7">MySQL</li>
               </ul>
             </div>
             <div class="skill-category">
-              <h3>AI & Data Science</h3>
-              <ul>
-                <li>Machine Learning</li>
-                <li>Deep Learning</li>
-                <li>Natural Language Processing</li>
-                <li>Pandas</li>
-                <li>PyTorch</li>
-                <li>TensorFlow</li>
-                <li>Jupyter Notebooks</li>
-                <li>Web Scraping (BeautifulSoup, Scrapy)</li>
+              <h3 data-i18n="skills_ai_title">AI & Data Science</h3>
+              <ul class="skill-list">
+                <li data-i18n="skills_ai_1">Machine Learning</li>
+                <li data-i18n="skills_ai_2">Deep Learning</li>
+                <li data-i18n="skills_ai_3">Natural Language Processing</li>
+                <li data-i18n="skills_ai_4">Pandas</li>
+                <li data-i18n="skills_ai_5">PyTorch</li>
+                <li data-i18n="skills_ai_6">TensorFlow</li>
+                <li data-i18n="skills_ai_7">Jupyter Notebooks</li>
+                <li data-i18n="skills_ai_8">
+                  Web Scraping (BeautifulSoup, Scrapy)
+                </li>
               </ul>
             </div>
             <div class="skill-category">
-              <h3>Tools & Technologies</h3>
-              <ul>
-                <li>Git/GitHub</li>
-                <li>Google Cloud</li>
-                <li>Vercel/Render</li>
-                <li>VS Code</li>
-                <li>Postman</li>
-                <li>npm/yarn</li>
+              <h3 data-i18n="skills_tools_title">Tools & Technologies</h3>
+              <ul class="skill-list">
+                <li data-i18n="skills_tools_1">Git/GitHub</li>
+                <li data-i18n="skills_tools_2">Google Cloud</li>
+                <li data-i18n="skills_tools_3">Vercel/Render</li>
+                <li data-i18n="skills_tools_4">VS Code</li>
+                <li data-i18n="skills_tools_5">Postman</li>
+                <li data-i18n="skills_tools_6">npm/yarn</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
-      <section id="experience">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-number">04</span>
-            <h2>Experience</h2>
-          </div>
-          <div class="experience-timeline">
-            <div class="experience-item">
-              <div class="experience-date">
-                <span>2025 - Present</span>
-              </div>
-              <div class="experience-content">
-                <h3>AI Developer</h3>
-                <p class="experience-company">Ovanya</p>
-                <p class="experience-description">
-                  Working on AI projects, focusing on machine learning, computer
-                  vision, and practical AI applications. Contributing to
-                  real-world AI solutions and model development.
-                </p>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-date">
-                <span>Sept 2024 - Oct 2024</span>
-              </div>
-              <div class="experience-content">
-                <h3>AI Research Intern</h3>
-                <p class="experience-company">UKH AI Center</p>
-                <p class="experience-description">
-                  Worked on multiple NLP projects and developed AI models
-                  specifically for Kurdish language processing. Collected and
-                  processed over 140,000 Kurdish news articles using web
-                  scraping techniques, created comprehensive datasets for NLP
-                  research, and actively participated in training and
-                  fine-tuning various AI models for Kurdish language
-                  applications.
-                </p>
-              </div>
-            </div>
-            <div class="experience-item">
-              <div class="experience-date">
-                <span>July 2024 - August 2024</span>
-              </div>
-              <div class="experience-content">
-                <h3>Frontend Developer Intern</h3>
-                <p class="experience-company">Standing Tech</p>
-                <p class="experience-description">
-                  Maintained websites for local businesses, focusing on clean
-                  design and responsive implementation.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section id="education">
-        <div class="container">
-          <div class="section-header">
-            <span class="section-number">05</span>
-            <h2>Education</h2>
-          </div>
-          <div class="education-item">
-            <div class="education-date">
-              <span>2021 - 2025</span>
-            </div>
-            <div class="education-content">
-              <h3>BSc in Software Engineering</h3>
-              <p class="education-institution">
-                University of Kurdistan Hewlêr (UKH)
-              </p>
-              <p class="education-description">
-                Focusing on software development, algorithms, and AI
-                applications.
-              </p>
-            </div>
-          </div>
-          <div class="education-item">
-            <div class="education-date">
-              <span>2024</span>
-            </div>
-            <div class="education-content">
-              <h3>Ovanya AI Bootcamp</h3>
-              <p class="education-institution">Ovanya • wedo</p>
-              <p class="education-description">
-                Intensive AI development program covering machine learning
-                fundamentals, neural networks, and practical AI applications.
-              </p>
-              <p class="education-details">
-                The program provided hands-on training in deep learning models,
-                NLP techniques. I learned about data preprocessing, model
-                optimization, and AI development practices through practical
-                projects and real-world applications.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+
+      <!-- Contact Section -->
       <section id="contact">
         <div class="container">
           <div class="section-header">
-            <span class="section-number">06</span>
-            <h2>Contact</h2>
+            <span class="section-number" data-i18n="contact_section_number"
+              >04</span
+            >
+            <h2 class="section-title" data-i18n="contact_section_title">
+              Contact
+            </h2>
           </div>
           <div class="contact-content">
-            <p class="large-text">Interested in working together?</p>
-            <div class="contact-info">
-              <a href="mailto:akam.nawzad@ukh.edu.krd" class="contact-link"
-                >akam.nawzad@ukh.edu.krd</a
+            <p class="contact-lead" data-i18n="contact_large_text">
+              Interested in working together?
+            </p>
+            <a href="mailto:akam.nawzad@ukh.edu.krd" class="contact-email">
+              akam.nawzad@ukh.edu.krd
+            </a>
+
+            <div class="social-links">
+              <a
+                href="https://linkedin.com/in/akam-ot"
+                target="_blank"
+                class="social-link"
+                data-i18n="contact_linkedin"
               >
-              <div class="resume-download">
-                <a
-                  href="assets/Akam_s_Resume.pdf"
-                  download
-                  class="btn download-btn"
-                >
-                  <span>Download Resume</span>
-                </a>
-              </div>
-              <div class="social-links">
-                <a
-                  href="https://linkedin.com/in/akam-ot"
-                  target="_blank"
-                  class="social-link"
-                  >LinkedIn</a
-                >
-                <a
-                  href="https://github.com/akam-ot"
-                  target="_blank"
-                  class="social-link"
-                  >GitHub</a
-                >
-                <a
-                  href="https://huggingface.co/akam-ot"
-                  target="_blank"
-                  class="social-link"
-                  >Hugging Face</a
-                >
-              </div>
+                LinkedIn
+              </a>
+              <a
+                href="https://github.com/akam-ot"
+                target="_blank"
+                class="social-link"
+                data-i18n="contact_github"
+              >
+                GitHub
+              </a>
+              <a
+                href="https://huggingface.co/akam-ot"
+                target="_blank"
+                class="social-link"
+                data-i18n="contact_huggingface"
+              >
+                Hugging Face
+              </a>
             </div>
           </div>
         </div>
       </section>
     </main>
+
     <footer>
       <div class="container">
-        <p>© 2025 Akam Nawzad. All rights reserved.</p>
+        <p data-i18n="footer_text">© 2025 Akam Nawzad. All rights reserved.</p>
       </div>
     </footer>
   </body>

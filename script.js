@@ -2,9 +2,6 @@ document.addEventListener("DOMContentLoaded", () => {
   const body = document.body;
   const htmlElement = document.documentElement;
 
-  // ==========================================
-  // LANGUAGE SWITCHER
-  // ==========================================
   const langSwitcher = document.querySelector("[data-lang-switcher]");
   const langButton = langSwitcher?.querySelector(".lang-button");
   const langLabel = langSwitcher?.querySelector(".lang-label");
@@ -16,11 +13,10 @@ document.addEventListener("DOMContentLoaded", () => {
     ku: "KU",
     ckb: "کو"
   };
-  const rtlLanguages = ["ckb"]; // Only Sorani uses RTL, Kurmanji is LTR
+  const rtlLanguages = ["ckb"];
   let currentLang = localStorage.getItem("lang") || "en";
   let isLangMenuOpen = false;
 
-  // Language Menu Functions
   const openLangMenu = () => {
     if (!langSwitcher || !langButton) return;
     langSwitcher.classList.add("open");
@@ -35,7 +31,6 @@ document.addEventListener("DOMContentLoaded", () => {
     isLangMenuOpen = false;
   };
 
-  // Language Button Click
   if (langButton) {
     langButton.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -47,7 +42,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Language Options Click
   langOptions.forEach((option) => {
     option.addEventListener("click", (event) => {
       event.stopPropagation();
@@ -60,7 +54,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // Close Language Menu on Outside Click
   document.addEventListener("click", (event) => {
     if (
       isLangMenuOpen &&
@@ -71,31 +64,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Close Language Menu on Escape Key
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape" && isLangMenuOpen) {
       closeLangMenu();
     }
   });
 
-  // Set Language Function
   async function setLanguage(lang) {
     try {
       const response = await fetch(`locales/${lang}.json`);
       const translations = await response.json();
 
-      // Update language label
       if (langLabel) {
         langLabel.textContent = langDisplay[lang] || lang.toUpperCase();
       }
 
-      // Update aria-selected for all options
       langOptions.forEach((option) => {
         const isActive = option.getAttribute("data-lang") === lang;
         option.setAttribute("aria-selected", isActive.toString());
       });
 
-      // Set RTL direction for Kurdish languages
       if (rtlLanguages.includes(lang)) {
         htmlElement.setAttribute("dir", "rtl");
         body.setAttribute("dir", "rtl");
@@ -104,10 +92,8 @@ document.addEventListener("DOMContentLoaded", () => {
         body.setAttribute("dir", "ltr");
       }
 
-      // Update HTML lang attribute
       htmlElement.setAttribute("lang", lang);
 
-      // Update all text content
       updateContent(translations);
       currentLang = lang;
     } catch (error) {
@@ -115,9 +101,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  // Update Content Function
   function updateContent(translations) {
-    // Update all elements with data-i18n attribute
     document.querySelectorAll("[data-i18n]").forEach((element) => {
       const key = element.getAttribute("data-i18n");
       if (translations[key]) {
@@ -125,7 +109,6 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
 
-    // Update elements with innerHTML (for formatted text)
     document.querySelectorAll("[data-i18n-html]").forEach((element) => {
       const key = element.getAttribute("data-i18n-html");
       if (translations[key]) {
@@ -134,12 +117,8 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  // Set initial language on page load
   setLanguage(currentLang);
 
-  // ==========================================
-  // SMOOTH SCROLL
-  // ==========================================
   document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
@@ -161,9 +140,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // ==========================================
-  // NAVIGATION ACTIVE STATE
-  // ==========================================
   const sections = document.querySelectorAll("section[id]");
   const navLinks = document.querySelectorAll(".nav-link");
 

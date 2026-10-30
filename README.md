@@ -37,7 +37,7 @@ This is my personal portfolio website showcasing my research, projects, skills, 
 
 ## Viewing the Portfolio
 
-You can view the live portfolio at: [https://akam-ot.github.io](https://akam-ot.github.io)
+You can view the live portfolio at: [akamnawzad.com](https://akamnawzad.com)
 
 ## Contact
 

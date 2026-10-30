@@ -1,0 +1,221 @@
+%-------------------------
+% Resume in LaTeX
+% Based on Jake's Resume template: https://github.com/jakegut/resume (MIT)
+% Build: tectonic Akam_Nawzad_CV.tex && mv Akam_Nawzad_CV.pdf ../assets/
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & #2 \\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+\begin{center}
+    \textbf{\Huge \scshape Akam Nawzad Othman} \\ \vspace{1pt}
+    \small
+    \href{mailto:akam.nawzad@ukh.edu.krd}{\underline{akam.nawzad@ukh.edu.krd}} $|$
+    \href{https://akam-ot.github.io}{\underline{akam-ot.github.io}} $|$
+    \href{https://linkedin.com/in/akam-ot}{\underline{linkedin.com/in/akam-ot}} $|$
+    \href{https://github.com/akam-ot}{\underline{github.com/akam-ot}} $|$
+    \href{https://huggingface.co/akam-ot}{\underline{huggingface.co/akam-ot}}
+\end{center}
+
+
+%-----------EDUCATION-----------
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {University of Kurdistan Hewl\^{e}r (UKH)}{Erbil, Iraq}
+      {BSc in Software Engineering -- Graduated top 3 in programme}{Oct 2021 -- Jul 2025}
+      \resumeItemListStart
+        \resumeItem{Thesis: \textit{Fine-tuning XLM-RoBERTa for Named Entity Recognition in Kurmanji Kurdish}, published at WiNLP 2025, co-located with EMNLP 2025}
+      \resumeItemListEnd
+    \resumeSubheading
+      {AI Bootcamp -- Certificate of Completion}{Erbil, Iraq}
+      {Ovanya}{Nov 2024 -- Dec 2024}
+      \resumeItemListStart
+        \resumeItem{Intensive programme on machine-learning fundamentals and neural networks}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+      {AI Developer}{Aug 2025 -- Present}
+      {Ovanya}{Erbil, Iraq}
+      \resumeItemListStart
+        \resumeItem{Developed OCR and document-processing pipelines for scanned Kurdish documents}
+        \resumeItem{Contributed to building one of the first OCR systems and datasets for Sorani Kurdish}
+        \resumeItem{Trained and evaluated machine-learning models for text extraction from scanned pages}
+        \resumeItem{Built document classification and text segmentation workflows}
+        \resumeItem{Deployed model inference services with \textbf{FastAPI}}
+        \resumeItem{Developed evaluation benchmarks for extraction quality and model reliability}
+      \resumeItemListEnd
+
+    \resumeSubheading
+      {AI Researcher}{Sep 2024 -- Oct 2024}
+      {UKH Artificial Intelligence and Innovation Centre}{Erbil, Iraq}
+      \resumeItemListStart
+        \resumeItem{Collected and cleaned a \textbf{140K+} article Kurdish news corpus for NLP research}
+        \resumeItem{Built scalable web-scraping pipelines with Python and Beautiful Soup}
+        \resumeItem{Contributed to developing one of the first Kurdish spell-checking datasets}
+        \resumeItem{Designed annotation guidelines and supported dataset labelling workflows}
+        \resumeItem{Ran model evaluations and maintained dataset versioning for reproducible research}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+
+%-----------PUBLICATIONS-----------
+\section{Publications}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{KuMMLU: A Multitask Language Understanding Benchmark for Central Kurdish}}{2026}
+      \resumeItemListStart
+        \resumeItem{\emph{Proceedings of the 10th Widening NLP Workshop (WiNLP 2026), co-located with EMNLP 2026}, Budapest, pp.~173--180 -- \href{https://aclanthology.org/2026.winlp-main.15/}{\underline{paper}} $|$ \href{https://huggingface.co/datasets/akam-ot/KuMMLU}{\underline{dataset}}}
+        \resumeItem{3,272 multiple-choice questions across 18 subjects: 2,256 native questions from national Grade 9 and Grade 12 exams, and 1,016 translated from English MMLU}
+        \resumeItem{Evaluated 32 language models; the best reach about 88\% accuracy, multilingual baselines score only modestly above chance, and every model does better on translated than on native questions}
+        \resumeItem{Publicly released the benchmark and evaluation code}
+      \resumeItemListEnd
+    \resumeProjectHeading
+      {\textbf{Fine-tuning XLM-RoBERTa for Named Entity Recognition in Kurmanji Kurdish}}{2025}
+      \resumeItemListStart
+        \resumeItem{\emph{Proceedings of the 9th Widening NLP Workshop (WiNLP 2025), co-located with EMNLP 2025} -- \href{https://aclanthology.org/2025.winlp-main.8/}{\underline{paper}}}
+        \resumeItem{Built a manually annotated Kurmanji NER dataset of 7,919 sentences (person, organisation, location)}
+        \resumeItem{Fine-tuned XLM-RoBERTa to an F1 of 0.8735 (precision 0.8668, recall 0.8803); released the first public Kurmanji NER model with a web demo}
+      \resumeItemListEnd
+  \resumeSubHeadingListEnd
+
+
+%-----------PROJECTS-----------
+\section{Projects}
+    \resumeSubHeadingListStart
+      \resumeProjectHeading
+          {\textbf{\href{https://huggingface.co/spaces/akam-ot/kurdish-tts}{Kurdish Text-to-Speech}} $|$ \emph{PyTorch, MMS, Hugging Face}}{Nov 2025}
+          \resumeItemListStart
+            \resumeItem{Fine-tuned Meta's MMS TTS on a curated 10-hour Sorani dataset to produce the first open Sorani Kurdish TTS model; the demo supports Sorani and Badini}
+            \resumeItem{Improved pronunciation clarity and naturalness through audio preprocessing, transcript normalisation and evaluation}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://huggingface.co/spaces/akam-ot/kurdish-spellchecker}{Kurdish Spellchecker}} $|$ \emph{ByT5, Transformers, Gradio}}{}
+          \resumeItemListStart
+            \resumeItem{Fine-tuned ByT5-base as a sequence-to-sequence corrector for misspelled Sorani sentences; byte-level modelling handles Kurdish character variation}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{KuOCR -- Kurdish OCR and Document Extraction} $|$ \emph{Computer Vision, FastAPI}}{Jun 2025 -- Oct 2025}
+          \resumeItemListStart
+            \resumeItem{Full OCR system for Sorani Kurdish: a large real and synthetic dataset, right-to-left text rendering with bounding boxes, and a layout-aware extraction pipeline served via FastAPI}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{Multilingual Legal RAG System} $|$ \emph{FastAPI, Vector Search}}{Oct 2025 -- Present}
+          \resumeItemListStart
+            \resumeItem{Embedding-based search and a chatbot that answers questions over official legal documents using retrieved Kurdish, Arabic and English texts, with custom text preprocessing}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://github.com/akam-ot/kurdish-character-cnn-scratch}{Kurdish Handwritten Character Recognition}} $|$ \emph{Python, NumPy, Streamlit}}{May 2025 -- Jun 2025}
+          \resumeItemListStart
+            \resumeItem{Implemented a 547K-parameter CNN from scratch in NumPy (manual convolution, im2col, backpropagation); 71.05\% accuracy across 35 classes}
+          \resumeItemListEnd
+      \resumeProjectHeading
+          {\textbf{\href{https://gorrer.vercel.app/}{Gorrer}} and \textbf{\href{https://kurdtype.vercel.app/}{KurdType}} $|$ \emph{Python, Flask, Web}}{}
+          \resumeItemListStart
+            \resumeItem{A Latin--Arabic Kurdish script transliterator, and a curated catalogue of open-licensed fonts that support Kurdish}
+          \resumeItemListEnd
+    \resumeSubHeadingListEnd
+
+
+%-----------HONOURS-----------
+\section{Honours}
+  \resumeSubHeadingListStart
+    \resumeProjectHeading
+      {\textbf{Finalist}, 12th Undergraduate Research \& Innovation Competition (URIC 2025), Abu Dhabi}{May 2025}
+  \resumeSubHeadingListEnd
+  \vspace{-4pt}
+
+
+%-----------TECHNICAL SKILLS-----------
+\section{Technical Skills}
+ \begin{itemize}[leftmargin=0.15in, label={}]
+    \small{\item{
+     \textbf{AI/ML}{: NLP, Deep Learning (CNNs, Transformers), Computer Vision \& OCR, Speech Synthesis, LLM Evaluation, RAG} \\
+     \textbf{Languages}{: Python, C++, SQL, JavaScript} \\
+     \textbf{Libraries}{: PyTorch, TensorFlow, Hugging Face, scikit-learn, NumPy, Pandas, NLTK, Matplotlib} \\
+     \textbf{Backend \& Tools}{: FastAPI, Flask, PostgreSQL, MySQL, MongoDB, Vector Databases, Docker, Git, GitHub, GitLab} \\
+     \textbf{Spoken}{: Kurdish (native), English (C1), Arabic (B1--B2)}
+    }}
+ \end{itemize}
+
+
+%-------------------------------------------
+\end{document}

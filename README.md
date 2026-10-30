@@ -2,24 +2,30 @@
 
 ## Overview
 
-This is my personal portfolio website showcasing my projects, skills, and experience as a Software Engineering student at UKH with interests in UI/UX design, web development, and machine learning.
+This is my personal portfolio website showcasing my research, projects, skills, and experience as an AI developer working on NLP for Kurdish and other low-resource languages.
 
 ## Features
 
 - Clean, minimalist design
 - Responsive layout for all devices
-- Project showcase with live links
-- Skills and experience sections
-- Smooth scrolling and subtle animations
-- Contact information and resume download
+- English, Kurmanji, and Sorani (RTL) translations
+- Project and publication showcase with live links
+- Experience and education sections
+- Resume download (LaTeX source in `cv/`, based on Jake's Resume)
 
-## Projects Featured
+## Work Featured
 
-- **Gorrer** - Kurdish Transliterator
-- **KurdType** - Kurdish Font Platform
-- **DarshtnAI** - Kurdish Essay Generator
-- **London Towers Erbil** - Property Website
-- **Kurdish News Corpus** - Data Collection Project
+**Publications**
+- **KuMMLU** - Multitask language understanding benchmark for Central Kurdish (WiNLP 2026)
+- **Fine-tuning XLM-RoBERTa for NER in Kurmanji Kurdish** (WiNLP 2025)
+
+**Projects**
+- **Kurdish Text-to-Speech** - Sorani and Badini, MMS fine-tuning
+- **Kurdish Spellchecker** - ByT5 sequence-to-sequence corrector
+- **Kurmanji NER Model** - XLM-RoBERTa
+- **Handwritten Character Recognition** - CNN from scratch in NumPy
+- **Gorrer** - Kurdish script transliterator
+- **KurdType** - Kurdish font catalogue
 
 ## Technologies Used
 
